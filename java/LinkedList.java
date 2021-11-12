@@ -24,8 +24,8 @@ public class LinkedList {
         if(this.head==null) {
             this.head=newElement;
         } else {
-            newElement.setNext(head);
-            head=newElement;
+            newElement.setNext(this.head);
+            this.head=newElement;
         }
     }
 
