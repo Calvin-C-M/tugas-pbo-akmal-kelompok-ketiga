@@ -29,15 +29,22 @@ class Student {
 
         void setNama(string nama) { this->nama=nama; }
         void setNpm(string npm) { this->npm=npm; }
+        void setPenguji1(Nilai nilai) { this->penguji1=nilai; }
+        void setPenguji2(Nilai nilai) { this->penguji2=nilai; }
+        void setPembimbing(Nilai nilai) { this->pembimbing=nilai; }
 
         string getNama() { return this->nama; }
         string getNpm() { return this->npm; }
+        Nilai getPenguji1() { return this->penguji1; }
+        Nilai getPenguji2() { return this->penguji2; }
+        Nilai getPembimbing() { return this->pembimbing; }
 
-        float getNilaiSidang() {
+        Nilai getNilaiSidang() {
             float nilai1=this->penguji1.getNilai();
             float nilai2=this->penguji2.getNilai();
             float nilai3=this->pembimbing.getNilai();
-            return nilai1+nilai2+nilai3;
+            Nilai *sidang=new Nilai(nilai1+nilai2+nilai3);
+            return *sidang;
         }
 
         char getHurufMutu(float nilai) {
@@ -66,7 +73,7 @@ class Student {
                  << "\nNilai Penguji 1 = " << this->penguji1.getNilai()
                  << "\nNilai Penguji 2 = " << this->penguji2.getNilai()
                  << "\nNilai Pembimbing = " << this->pembimbing.getNilai()
-                 << "\nNilai Sidang = " << this->getNilaiSidang()
-                 << "\nHuruf Mutu = " << this->getHurufMutu(this->getNilaiSidang());
+                 << "\nNilai Sidang = " << this->getNilaiSidang().getNilai()
+                 << "\nHuruf Mutu = " << this->getHurufMutu(this->getNilaiSidang().getNilai());
         }
 };
