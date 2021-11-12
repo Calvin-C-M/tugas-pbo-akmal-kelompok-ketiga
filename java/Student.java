@@ -43,8 +43,8 @@ public class Student {
         System.out.println("Nilai Penguji 1 = " + this.penguji1.getNilai());
         System.out.println("Nilai Penguji 2 = " + this.penguji2.getNilai());
         System.out.println("Nilai Pembimbing = " + this.pembimbing.getNilai());
-        System.out.println("Nilai Sidang = " + this.getNilaiSidang());
-        System.out.println("Huruf Mutu = " + this.getHurufMutu(this.getNilaiSidang()));
+        System.out.println("Nilai Sidang = " + this.getNilaiSidang().getNilai());
+        System.out.println("Huruf Mutu = " + this.getHurufMutu(this.getNilaiSidang().getNilai()));
     }
 
     public void setNama(String nama) {
@@ -55,6 +55,18 @@ public class Student {
         this.npm = npm;
     }
 
+    public void setPenguji1(Nilai penguji1) {
+        this.penguji1 = penguji1;
+    }
+
+    public void setPenguji2(Nilai penguji2) {
+        this.penguji2 = penguji2;
+    }
+    
+    public void setPembimbing(Nilai pembimbing) {
+        this.pembimbing = pembimbing;
+    }
+
     public String getNama() {
         return nama;
     }
@@ -63,11 +75,24 @@ public class Student {
         return npm;
     }
 
-    public float getNilaiSidang() {
+    public Nilai getPenguji1() {
+        return penguji1;
+    }
+
+    public Nilai getPenguji2() {
+        return penguji2;
+    }
+
+    public Nilai getPembimbing() {
+        return pembimbing;
+    }
+
+    public Nilai getNilaiSidang() {
         float nilai1=this.penguji1.getNilai();
         float nilai2=this.penguji2.getNilai();
         float nilai3=this.pembimbing.getNilai();
-        return nilai1+nilai2+nilai3;
+        Nilai sidang=new Nilai(nilai1+nilai2+nilai3);
+        return sidang;
     }
 
     public char getHurufMutu(float nilai) {
