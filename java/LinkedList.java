@@ -76,7 +76,9 @@ public class LinkedList {
         while(curr != null) {
             switch(cari) {
                 case "Nama" : dicari=curr.getMahasiswa().getNama();
+                    break;
                 case "NPM" : dicari=curr.getMahasiswa().getNpm();
+                    break;
             }
 
             if(dicari==data) {
@@ -100,9 +102,13 @@ public class LinkedList {
         while(curr != null) {
             switch(cari) {
                 case "Penguji 1" : dicari=curr.getMahasiswa().getPenguji1().getNilai();
+                    break;
                 case "Penguji 2" : dicari=curr.getMahasiswa().getPenguji2().getNilai();
+                    break;
                 case "Pembimbing" : dicari=curr.getMahasiswa().getPembimbing().getNilai();
+                    break;
                 case "Nilai Sidang" : dicari=curr.getMahasiswa().getNilaiSidang().getNilai();
+                    break;
             }
             
             if(dicari==nilai) {
@@ -126,6 +132,7 @@ public class LinkedList {
         while(curr != null) {
             switch(cari) {
                 case "Huruf Mutu" : dicari=curr.getMahasiswa().getHurufMutu(curr.getMahasiswa().getNilaiSidang().getNilai());
+                    break;
             }
 
             if(dicari==karakter) {

@@ -87,7 +87,9 @@ class LinkedList {
             while(curr != nullptr) {
                 switch(cari) {
                     case 1 : dicari=curr->getMahasiswa()->getNama();
+                        break;
                     case 2 : dicari=curr->getMahasiswa()->getNpm();
+                        break;
                 }
 
                 if(dicari==data) {
@@ -119,22 +121,26 @@ class LinkedList {
 
             while(curr != nullptr) {
                 switch(cari) {
-                   case 1 : dicari=curr->getMahasiswa()->getPenguji1().getNilai();
-                   case 2 : dicari=curr->getMahasiswa()->getPenguji2().getNilai();
-                   case 3 : dicari=curr->getMahasiswa()->getPembimbing().getNilai();
-                   case 4 : dicari=curr->getMahasiswa()->getNilaiSidang().getNilai();
+                    case 1 : dicari=curr->getMahasiswa()->getPenguji1().getNilai();
+                        break;
+                    case 2 : dicari=curr->getMahasiswa()->getPenguji2().getNilai();
+                        break;
+                    case 3 : dicari=curr->getMahasiswa()->getPembimbing().getNilai();
+                        break;
+                    case 4 : dicari=curr->getMahasiswa()->getNilaiSidang().getNilai();
+                        break;
                 }
 
                 if(dicari==nilai) {
-                   found=true;
-                   curr->getMahasiswa()->print();
+                    found=true;
+                    curr->getMahasiswa()->print();
                 }
 
                 curr=curr->getNext();
             }
 
             if(!found) {
-               cout << "Data yang anda cari tidak dapat ditemukan";
+                cout << "Data yang anda cari tidak dapat ditemukan";
             }
         }
 
@@ -151,6 +157,7 @@ class LinkedList {
             while(curr != nullptr) {
                 switch(cari) {
                     case 1 : dicari=curr->getMahasiswa()->getHurufMutu(curr->getMahasiswa()->getNilaiSidang().getNilai());
+                        break;
                 }
 
                 if(dicari==karakter) {
