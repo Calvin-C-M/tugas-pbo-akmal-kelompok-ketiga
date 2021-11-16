@@ -13,7 +13,7 @@ public class Nilai {
 
     public void input(String penilai) {
         Scanner input=new Scanner(System.in);
-        System.out.print("Masukkan nilai " + penilai + ": ");
+        System.out.print("Masukkan nilai " + penilai + "\t: ");
         this.nilai=Float.parseFloat(input.nextLine());
     }
 

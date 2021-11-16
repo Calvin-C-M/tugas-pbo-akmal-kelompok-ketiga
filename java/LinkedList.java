@@ -1,26 +1,34 @@
 public class LinkedList {
-    Node head;
+    Element head;
 
     LinkedList() {
         this.head=null;
     }
 
-    LinkedList(Node head) {
+    LinkedList(Element head) {
         this.head=head;
     }
 
-    public void setHead(Node head) {
+    public void setHead(Element head) {
         this.head = head;
     }
     
-    public Node getHead() {
+    public Element getHead() {
         return head;
     }
 
-    public void insertFirst() {
-        Node newElement=new Node();
-        newElement.getMahasiswa().input();
+    public void createList(){
+        this.head = null;
+    }
 
+    public Element createElmt(){
+        Element newElement=new Element();
+        newElement.getMahasiswa().input();
+        newElement.setNext(null);
+        return newElement;
+    }
+
+    public void insertFirst(Element newElement) {
         if(this.head==null) {
             this.head=newElement;
         } else {
@@ -29,14 +37,11 @@ public class LinkedList {
         }
     }
 
-    public void insertLast() {
-        Node newElement=new Node();
-        newElement.getMahasiswa().input();
-
+    public void insertLast(Element newElement) {
         if(this.head==null) {
             this.head=newElement;
         } else {
-            Node curr=this.head;
+            Element curr=this.head;
             while(curr.getNext() != null) {
                 curr=curr.getNext();
             }
@@ -45,14 +50,14 @@ public class LinkedList {
     }
 
     public void deleteFirst() {
-        Node del=null;
+        Element del=null;
         del=this.head;
         this.head=this.head.getNext();
     }
 
     public void deleteLast() {
-        Node del=null;
-        Node curr=this.head;
+        Element del=null;
+        Element curr=this.head;
         while(curr.getNext().getNext() != null) {
             curr=curr.getNext();
         }
@@ -61,7 +66,7 @@ public class LinkedList {
     }
 
     public void printList() {
-        Node curr=this.head;
+        Element curr=this.head;
         while(curr != null) {
             curr.getMahasiswa().print();
             curr=curr.getNext();
@@ -70,7 +75,7 @@ public class LinkedList {
     
     public void searchString(String cari, String data) {
         boolean found=false;
-        Node curr=this.head;
+        Element curr=this.head;
         String dicari=new String();
 
         while(curr != null) {
@@ -96,7 +101,7 @@ public class LinkedList {
 
     public void searchNilai(String cari, float nilai) {
         boolean found=false;
-        Node curr=this.head;
+        Element curr=this.head;
         float dicari=0;
         
         while(curr != null) {
@@ -126,7 +131,7 @@ public class LinkedList {
 
     public void searchChar(String cari, char karakter) {
         boolean found=false;
-        Node curr=this.head;
+        Element curr=this.head;
         char dicari='A';
 
         while(curr != null) {

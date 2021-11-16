@@ -1,13 +1,13 @@
-public class Node {
+public class Element {
     private Student mahasiswa;
-    private Node next;
+    private Element next;
 
-    Node() {
+    Element() {
         this.mahasiswa=new Student();
         this.next=null;
     }
 
-    Node(Student student) {
+    Element(Student student) {
         this.mahasiswa=student;
         this.next=null;
     }
@@ -16,14 +16,14 @@ public class Node {
         this.mahasiswa = mahasiswa;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Element next) {
         this.next = next;
     }
 
     public Student getMahasiswa() {
         return mahasiswa;
     }
-    public Node getNext() {
+    public Element getNext() {
         return next;
     }
 }

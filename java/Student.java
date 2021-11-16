@@ -26,10 +26,10 @@ public class Student {
     public void input() {
         Scanner input=new Scanner(System.in);
 
-        System.out.print("Masukkan nama: ");
+        System.out.print("Masukkan nama\t\t\t: ");
         this.nama=input.nextLine();
 
-        System.out.print("Masukkan npm: ");
+        System.out.print("Masukkan npm\t\t\t: ");
         this.npm=input.nextLine();
 
         penguji1.input("Penguji 1");
@@ -38,13 +38,13 @@ public class Student {
     }
 
     void print() {
-        System.out.println("Nama = " + this.nama);
-        System.out.println("NPM = " + this.npm);
-        System.out.println("Nilai Penguji 1 = " + this.penguji1.getNilai());
-        System.out.println("Nilai Penguji 2 = " + this.penguji2.getNilai());
-        System.out.println("Nilai Pembimbing = " + this.pembimbing.getNilai());
-        System.out.println("Nilai Sidang = " + this.getNilaiSidang().getNilai());
-        System.out.println("Huruf Mutu = " + this.getHurufMutu(this.getNilaiSidang().getNilai()));
+        System.out.print("| " + this.npm + "\t");
+        System.out.print("| " + this.nama + "\t");
+        System.out.print("| " + this.penguji1.getNilai() + "\t");
+        System.out.print("| " + this.penguji2.getNilai() + "\t");
+        System.out.print("| " + this.pembimbing.getNilai() + "\t");
+        System.out.print("| " + this.getNilaiSidang().getNilai() + "\t");
+        System.out.print("| " + this.getHurufMutu(this.getNilaiSidang().getNilai()) + " |");
     }
 
     public void setNama(String nama) {
