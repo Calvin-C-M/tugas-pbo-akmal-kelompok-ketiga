@@ -4,9 +4,9 @@ public class Main {
     public static Scanner input=new Scanner(System.in);
 
     public static void header(){
-        System.out.println("=============================================================================================================================");
-        System.out.println("| NPM\t\t| Nama\t\t\t| Nilai Penguji 1 | Nilai Penguji 2 | Nilai Pembimbing | Nilai Sidang | Huruf Mutu |");
-        System.out.println("=============================================================================================================================");
+        System.out.println("=========================================================================================================================");
+        System.out.println("| NPM\t\t| Nama\t\t\t| N Penguji 1\t| N Penguji 2\t| N Pembimbing\t| Nilai Sidang\t| Huruf Mutu\t|");
+        System.out.println("=========================================================================================================================");
     }
 
     public static void menu(){
@@ -26,8 +26,8 @@ public class Main {
     }
 
     public static void menuSearchMahasiswa(LinkedList list) {
-        String stringDicari="";
-        String dataDicari="";
+        String stringDicari=" ";
+        String dataDicari=" ";
 
         System.out.println("Cari berdasarkan: ");
         System.out.println("1. Nama");
@@ -51,22 +51,25 @@ public class Main {
         }
         
         System.out.print("Masukkan " + stringDicari + ": ");
-        dataDicari=input.nextLine();
+        dataDicari=input.nextLine(); //gak muncul inputan (keskip)
 
+
+        header();
         list.searchString(stringDicari, dataDicari);
+        System.out.println("=========================================================================================================================");
     }
 
     public static void menuSearchNilai(LinkedList list) {
         String nilaiDicari="";
 
-        System.out.println("Nilai yang dicari: ");
+        System.out.print("Nilai yang dicari: ");
         float nilai=input.nextFloat();
         
         System.out.println("Cari berdasarkan: ");
         System.out.println("1. Nilai Penguji 1      3. Nilai Pembimbing");
         System.out.println("2. Nilai Penguji 2      4. Nilai Sidang");
         System.out.println("0. Kembali");
-        System.out.println("Pilihan: ");
+        System.out.print("Pilihan: ");
         int pil=input.nextInt();
         switch(pil) {
             case 1: nilaiDicari="Penguji 1";
@@ -88,7 +91,9 @@ public class Main {
                 menuSearchNilai(list);
                 break;
         }
+        header();
         list.searchNilai(nilaiDicari, nilai);
+        System.out.println("=========================================================================================================================");
     }
 
     public static void menuSearchHurufMutu(LinkedList list) {
@@ -125,7 +130,9 @@ public class Main {
                 break;
         }
 
+        header();
         list.searchHurufMutu(nilaiDicari, huruf);
+        System.out.println("=========================================================================================================================");
     }
 
     public static void main(String[] args) {
@@ -180,7 +187,7 @@ public class Main {
                     System.out.println();
                     header();
                     myNilai.printList();
-                    System.out.println("=============================================================================================================================");
+                    System.out.println("=========================================================================================================================");
                     break;
 
                 case 9:

@@ -134,7 +134,7 @@ public class LinkedList {
         }
     }
 
-    public void searchHurufMutu(String cari, char karakter) {
+    public void searchHurufMutu(String cari, char karakter) { //infinite loop
         boolean found=false;
         Element curr=this.head;
         char dicari='A';

@@ -68,12 +68,13 @@ class Student {
         }
 
         void print() {
-            cout << "\nNama = " << this->nama
-                 << "\nNPM = " << this->npm
-                 << "\nNilai Penguji 1 = " << this->penguji1.getNilai()
-                 << "\nNilai Penguji 2 = " << this->penguji2.getNilai()
-                 << "\nNilai Pembimbing = " << this->pembimbing.getNilai()
-                 << "\nNilai Sidang = " << this->getNilaiSidang().getNilai()
-                 << "\nHuruf Mutu = " << this->getHurufMutu(this->getNilaiSidang().getNilai());
+            cout << "| " << this->npm << "\t"
+                 << "| " << this->nama << " \t\t"
+                 << "| " << this->penguji1.getNilai() << "\t\t"
+                 << "| " << this->penguji2.getNilai() << "\t\t"
+                 << "| " << this->pembimbing.getNilai() << "\t\t"
+                 << "| " << this->getNilaiSidang().getNilai() << "\t\t"
+                 << "| " << this->getHurufMutu(this->getNilaiSidang().getNilai()) << "\t\t|"
+                 << endl;
         }
 };
