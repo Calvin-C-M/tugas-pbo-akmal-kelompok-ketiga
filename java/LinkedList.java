@@ -81,7 +81,7 @@ public class LinkedList {
     public void searchString(String cari, String data) {
         boolean found=false;
         Element curr=this.head;
-        String dicari=new String();
+        String dicari="";
 
         while(curr != null) {
             switch(cari) {
@@ -91,7 +91,7 @@ public class LinkedList {
                     break;
             }
 
-            if(dicari==data) {
+            if(data.equals(dicari)) {
                 found=true;
                 curr.getMahasiswa().print();
             }

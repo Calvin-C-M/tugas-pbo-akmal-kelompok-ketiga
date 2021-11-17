@@ -51,8 +51,7 @@ public class Main {
         }
         
         System.out.print("Masukkan " + stringDicari + ": ");
-        dataDicari=input.next(); //gak muncul inputan (keskip)
-
+        dataDicari=input.next(); 
 
         header();
         list.searchString(stringDicari, dataDicari);
