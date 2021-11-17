@@ -99,64 +99,49 @@ def menuSearchHurufMutu(list) :
 
 myNilai = LinkedList()
 newElement = Node()
-programRunning=bool(1)
+programRunning=True
 
 while(programRunning) :
     menu()
     inMenu = int(input(" Pilih : "))
 
-    def switch (inMenu) {
-        case 1:
-            System.out.println("===========================")
-            newElement = myNilai.createElement()
-            myNilai.insertFirst(newElement)
-            break
+    if inMenu==1:
+        print("===========================")
+        myNilai.insertFirst()
 
-        case 2:
-            System.out.println("===========================")
-            newElement = myNilai.createElement()
-            myNilai.insertLast(newElement)
-            break
+    elif inMenu==2:
+        print("===========================")
+        myNilai.insertLast()
 
-        case 3:
-            System.out.println("===========================")
-            myNilai.deleteFirst()
-            break
+    elif inMenu==3:
+        print("===========================")
+        myNilai.deleteFirst()
 
-        case 4:
-            System.out.println("===========================")
-            myNilai.deleteLast()
-            break
+    elif inMenu==4:
+        print("===========================")
+        myNilai.deleteLast()
 
-        case 5:
-            System.out.println("===========================")
-            menuSearchMahasiswa(myNilai)
-            break
+    elif inMenu==5:
+        print("===========================")
+        menuSearchMahasiswa(myNilai)
 
-        case 6:
-            System.out.println("===========================")
-            menuSearchNilai(myNilai)
-            break
+    elif inMenu==6:
+        print("===========================")
+        menuSearchNilai(myNilai)
 
-        case 7:
-            System.out.println("===========================")
-            menuSearchHurufMutu(myNilai)
-            break
+    elif inMenu==7:
+        print("===========================")
+        menuSearchHurufMutu(myNilai)
 
-        case 8:
-            System.out.println()
-            header()
-            myNilai.printList()
-            System.out.println("=========================================================================================================================")
-            break
+    elif inMenu==8:
+        print()
+        header()
+        myNilai.printList()
+        print("=========================================================================================================================")
 
-        case 9:
-            programRunning=false
-            System.exit(0)
-            break
+    elif inMenu==9:
+        programRunning=False
+        exit(0)
 
-        default:
-            System.out.println("Ada kesalahan dalam memilih, silahkan coba lagi")
-            break
-    }
-}
+    else:
+        print("Ada kesalahan dalam memilih, silahkan coba lagi")

@@ -16,13 +16,14 @@ class Student :
         self.__pembimbing.input("Pembimbing")
 
     def print(self) :
-        print("Nama = " + self.__nama)
-        print("NPM = " + self.__npm)
-        print("Nilai Penguji 1 = " + str(self.__penguji1.getNilai()))
-        print("Nilai Penguji 2 = " + str(self.__penguji2.getNilai()))
-        print("Nilai Pembimbing = " + str(self.__pembimbing.getNilai()))
-        print("Nilai Sidang = " + str(self.getNilaiSidang().getNilai()))
-        print("Huruf Mutu = " + self.getHurufMutu())
+        print("| " + self.__npm + "\t| " 
+             + self.__nama + " \t\t| " 
+             + str(self.__penguji1.getNilai()) + "\t\t| " 
+             + str(self.__penguji2.getNilai()) + "\t\t| " 
+             + str(self.__pembimbing.getNilai()) + "\t\t| " 
+             + str(self.getNilaiSidang().getNilai()) + "\t\t| " 
+             + self.getHurufMutu() + "\t\t|"
+        )
 
     def setNama(self,nama) : self.__nama=nama
     def setNpm(self,npm) : self.__npm=npm

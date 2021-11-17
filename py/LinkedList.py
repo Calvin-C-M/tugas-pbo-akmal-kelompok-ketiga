@@ -57,18 +57,18 @@ class LinkedList :
         dicari=""
 
         while curr.getNext() is not None :
-            if(cari is "Nama") :
+            if(cari == "Nama") :
                 dicari=curr.getMahasiswa().getNama()
-            elif(cari is "NPM") :
+            elif(cari == "NPM") :
                 dicari=curr.getMahasiswa().getNpm()
             
-            if(dicari is data) :
+            if(dicari == data) :
                 found=True
                 curr.getMahasiswa().print()
             
             curr=curr.getNext()
 
-        if(found is False) :
+        if(found == False) :
             print("Data tidak ada yang ditemukan")
 
     def searchNilai(self,cari,nilai) :
@@ -77,22 +77,22 @@ class LinkedList :
         dicari=0.0
 
         while curr.getNext() is not None :
-            if(cari is "Penguji 1") :
+            if(cari == "Penguji 1") :
                 dicari=curr.getMahasiswa().getPenguji1().getNilai()
-            elif(cari is "Penguji 2") :
+            elif(cari == "Penguji 2") :
                 dicari=curr.getMahasiswa().getPenguji2().getNilai()
-            elif(cari is "Pembimbing") :
+            elif(cari == "Pembimbing") :
                 dicari=curr.getMahasiswa().getPembimbing().getNilai()
-            elif(cari is "Nilai Sidang") :
+            elif(cari == "Nilai Sidang") :
                 dicari=curr.getMahasiswa().getNilaiSidang().getNilai()
             
-            if(dicari is nilai) :
+            if(dicari == nilai) :
                 found=True
                 curr.getMahasiswa().print()
 
             curr=curr.getNext()
 
-        if(found is False) :
+        if(found == False) :
             print("Data tidak ada yang ditemukan")
 
     def searchChar(self,cari,karakter) :
@@ -101,14 +101,14 @@ class LinkedList :
         dicari=''
 
         while curr.getNext() is not None :
-            if(cari is "Huruf Mutu") : 
+            if(cari == "Huruf Mutu") : 
                 dicari=curr.getMahasiswa().getHurufMutu()
 
-            if(dicari is karakter) :
+            if(dicari == karakter) :
                 found=True
                 curr.getMahasiswa().print()
             
             curr=curr.getNext()
         
-        if(found is False) :
+        if(found == False) :
             print("Data tidak ada yang ditemukan")
