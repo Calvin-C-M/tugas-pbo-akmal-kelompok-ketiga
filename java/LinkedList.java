@@ -158,6 +158,8 @@ public class LinkedList {
                 found=true;
                 curr.getMahasiswa().print();
             }
+
+            curr=curr.getNext();
         }
 
         if(!found) {
