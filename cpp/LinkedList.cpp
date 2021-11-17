@@ -20,10 +20,18 @@ class LinkedList {
 
         Node *getHead() { return this->head; }
 
-        void insertFirst() {
+        Node *createElement() {
             Node *newElement=new Node();
             newElement->getMahasiswa()->input();
+            return newElement;
+        }
 
+        Node *createElement(Student *mhs) {
+            Node *newElement=new Node(mhs);
+            return newElement;
+        }
+
+        void insertFirst(Node *newElement) {
             if(this->head==nullptr) {
                 this->head=newElement;
             } else {
@@ -32,10 +40,7 @@ class LinkedList {
             }
         }
 
-        void insertLast() {
-            Node *newElement=new Node();
-            newElement->getMahasiswa()->input();
-
+        void insertLast(Node *newElement) {
             if(this->head==nullptr) {
                 this->head=newElement;
             } else {
