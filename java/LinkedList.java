@@ -21,10 +21,15 @@ public class LinkedList {
         this.head = null;
     }
 
-    public Element createElmt(){
+    public Element createElement(){
         Element newElement=new Element();
         newElement.getMahasiswa().input();
         newElement.setNext(null);
+        return newElement;
+    }
+
+    public Element createElmnt(Student mhs) {
+        Element newElement=new Element(mhs);
         return newElement;
     }
 

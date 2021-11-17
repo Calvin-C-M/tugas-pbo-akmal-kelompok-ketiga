@@ -38,13 +38,13 @@ public class Main {
             switch (inMenu) {
                 case 1:
                     System.out.println("===========================");
-                    newElement = myNilai.createElmt();
+                    newElement = myNilai.createElement();
                     myNilai.insertFirst(newElement);
                     break;
 
                 case 2:
                     System.out.println("===========================");
-                    newElement = myNilai.createElmt();
+                    newElement = myNilai.createElement();
                     myNilai.insertLast(newElement);
                     break;
 
