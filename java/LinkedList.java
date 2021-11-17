@@ -134,14 +134,23 @@ public class LinkedList {
         }
     }
 
-    public void searchChar(String cari, char karakter) {
+    public void searchHurufMutu(String cari, char karakter) {
         boolean found=false;
         Element curr=this.head;
         char dicari='A';
 
         while(curr != null) {
             switch(cari) {
-                case "Huruf Mutu" : dicari=curr.getMahasiswa().getHurufMutu(curr.getMahasiswa().getNilaiSidang().getNilai());
+                case "Nilai Sidang" : dicari=curr.getMahasiswa().getHurufMutu(curr.getMahasiswa().getNilaiSidang().getNilai());
+                    break;
+
+                case "Nilai Penguji 1": dicari=curr.getMahasiswa().getHurufMutu(curr.getMahasiswa().getPenguji1().getNilai());
+                    break;
+
+                case "Nilai Penguji 2": dicari=curr.getMahasiswa().getHurufMutu(curr.getMahasiswa().getPenguji2().getNilai());
+                    break;
+
+                case "Nilai Pembimbing": dicari=curr.getMahasiswa().getHurufMutu(curr.getMahasiswa().getPembimbing().getNilai());
                     break;
             }
 

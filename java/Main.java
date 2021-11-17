@@ -25,6 +25,109 @@ public class Main {
         System.out.println("===========================");
     }
 
+    public static void menuSearchMahasiswa(LinkedList list) {
+        String stringDicari="";
+        String dataDicari="";
+
+        System.out.println("Cari berdasarkan: ");
+        System.out.println("1. Nama");
+        System.out.println("2. NPM");
+        System.out.println("0. Kembali");
+        int pil=Integer.parseInt(input.nextLine());
+
+        switch(pil) {
+            case 1: stringDicari="Nama";
+                break;
+
+            case 2: stringDicari="NPM";
+                break;
+
+            case 0: return;
+
+            default:
+                System.out.println("Ada kesalahan dalam memilih");
+                menuSearchMahasiswa(list);
+                return;
+        }
+        
+        System.out.print("Masukkan " + stringDicari + ": ");
+        dataDicari=input.nextLine();
+
+        list.searchString(stringDicari, dataDicari);
+    }
+
+    public static void menuSearchNilai(LinkedList list) {
+        String nilaiDicari="";
+
+        System.out.println("Nilai yang dicari: ");
+        float nilai=input.nextFloat();
+        
+        System.out.println("Cari berdasarkan: ");
+        System.out.println("1. Nilai Penguji 1      3. Nilai Pembimbing");
+        System.out.println("2. Nilai Penguji 2      4. Nilai Sidang");
+        System.out.println("0. Kembali");
+        System.out.println("Pilihan: ");
+        int pil=input.nextInt();
+        switch(pil) {
+            case 1: nilaiDicari="Penguji 1";
+                break;
+
+            case 2: nilaiDicari="Penguji 2";
+                break;
+
+            case 3: nilaiDicari="Pembimbing";
+                break;
+
+            case 4: nilaiDicari="Nilai Sidang";
+                break;
+
+            case 0: return;
+
+            default:
+                System.out.println("Ada kesalahan dalam memilih, silahkan kembali ke menu utama");
+                menuSearchNilai(list);
+                break;
+        }
+        list.searchNilai(nilaiDicari, nilai);
+    }
+
+    public static void menuSearchHurufMutu(LinkedList list) {
+        String nilaiDicari="";
+
+        System.out.print("Huruf yang dicari: ");
+        char huruf=input.next().charAt(0);
+
+        System.out.println("Cari berdasarkan: ");
+        System.out.println("1. Nilai Penguji 1      3. Nilai Pembimbing");
+        System.out.println("2. Nilai Penguji 2      4. Nilai Sidang");
+        System.out.println("0. Kembali ");
+        System.out.print("Pilihan: ");
+        int pil=input.nextInt();
+
+        switch(pil) {
+            case 1: nilaiDicari="Nilai Penguji 1";
+                break;
+
+            case 2: nilaiDicari="Nilai Penguji 2";
+                break;
+
+            case 3: nilaiDicari="Nilai Pembimbing";
+                break;
+
+            case 4: nilaiDicari="Nilai Sidang";
+                break;
+
+            case 0: return;
+
+            default:
+                System.out.println("Ada yang salah dalam memilih, silahkan coba lagi");
+                menuSearchHurufMutu(list);
+                break;
+        }
+
+        list.searchHurufMutu(nilaiDicari, huruf);
+    }
+
     public static void main(String[] args) {
         LinkedList myNilai = new LinkedList();
         Element newElement = new Element();
@@ -60,30 +163,17 @@ public class Main {
 
                 case 5:
                     System.out.println("===========================");
-                    System.out.print("Cari mahasiswa dengan Nama/NPM : ");
-                    String mhs = input.nextLine();
-                    System.out.print("Masukkan " + mhs + " : ");
-                    String data = input.nextLine();
-                    header();
-                    myNilai.searchString(mhs, data);
+                    menuSearchMahasiswa(myNilai);
                     break;
 
                 case 6:
                     System.out.println("===========================");
-                    System.out.print("Cari nilai apa : ");
-                    String jns = input.nextLine();
-                    System.out.print("Masukkan nilai " + jns + " : ");
-                    float nilai = input.nextFloat();
-                    header();
-                    myNilai.searchNilai(jns, nilai);
+                    menuSearchNilai(myNilai);
                     break;
 
                 case 7:
                     System.out.println("===========================");
-                    System.out.print("Masukkan huruf : ");
-                    char huruf = input.next().charAt(0);
-                    header();
-                    myNilai.searchNilai("Huruf Mutu", huruf);
+                    menuSearchHurufMutu(myNilai);
                     break;
 
                 case 8:
