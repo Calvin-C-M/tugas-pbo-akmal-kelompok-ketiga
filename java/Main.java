@@ -33,7 +33,7 @@ public class Main {
         System.out.println("1. Nama");
         System.out.println("2. NPM");
         System.out.println("0. Kembali");
-        int pil=Integer.parseInt(input.nextLine());
+        int pil=input.nextInt();
 
         switch(pil) {
             case 1: stringDicari="Nama";
@@ -51,7 +51,7 @@ public class Main {
         }
         
         System.out.print("Masukkan " + stringDicari + ": ");
-        dataDicari=input.nextLine(); //gak muncul inputan (keskip)
+        dataDicari=input.next(); //gak muncul inputan (keskip)
 
 
         header();
