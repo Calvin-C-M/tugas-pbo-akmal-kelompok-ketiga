@@ -106,7 +106,7 @@ class LinkedList {
             }
 
             if(!found) {
-                cout << "Data yang anda cari tidak dapat ditemukan";
+                cout << "Data yang anda cari tidak dapat ditemukan" << endl;
             }
         }
 
@@ -145,11 +145,11 @@ class LinkedList {
             }
 
             if(!found) {
-                cout << "Data yang anda cari tidak dapat ditemukan";
+                cout << "Data yang anda cari tidak dapat ditemukan" << endl;
             }
         }
 
-        void searchChar(int cari, char karakter) {
+        void searchHurufMutu(int cari, char karakter) {
             /*
 
             cari = 1; Mencari huruf mutu
@@ -174,7 +174,7 @@ class LinkedList {
             }
 
             if(!found) {
-                cout << "Data yang anda cari tidak dapat ditemukan";
+                cout << "Data yang anda cari tidak dapat ditemukan" << endl;
             }
         }
 };
