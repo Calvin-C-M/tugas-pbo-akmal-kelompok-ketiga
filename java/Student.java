@@ -37,14 +37,14 @@ public class Student {
         pembimbing.input("Pembimbing");
     }
 
-    void print() {
+    public void print() {
         System.out.print("| " + this.npm + "\t");
-        System.out.print("| " + this.nama + "\t");
-        System.out.print("| " + this.penguji1.getNilai() + "\t");
-        System.out.print("| " + this.penguji2.getNilai() + "\t");
-        System.out.print("| " + this.pembimbing.getNilai() + "\t");
-        System.out.print("| " + this.getNilaiSidang().getNilai() + "\t");
-        System.out.print("| " + this.getHurufMutu(this.getNilaiSidang().getNilai()) + " |");
+        System.out.print("| " + this.nama + " \t\t");
+        System.out.print("| " + this.penguji1.getNilai() + "\t\t");
+        System.out.print("| " + this.penguji2.getNilai() + "\t\t");
+        System.out.print("| " + this.pembimbing.getNilai() + "\t\t");
+        System.out.print("| " + this.getNilaiSidang().getNilai() + "\t\t");
+        System.out.println("| " + this.getHurufMutu(this.getNilaiSidang().getNilai()) + "\t\t|");
     }
 
     public void setNama(String nama) {
@@ -88,9 +88,9 @@ public class Student {
     }
 
     public Nilai getNilaiSidang() {
-        float nilai1=this.penguji1.getNilai();
-        float nilai2=this.penguji2.getNilai();
-        float nilai3=this.pembimbing.getNilai();
+        float nilai1=30*this.penguji1.getNilai()/100;
+        float nilai2=30*this.penguji2.getNilai()/100;
+        float nilai3=40*this.pembimbing.getNilai()/100;
         Nilai sidang=new Nilai(nilai1+nilai2+nilai3);
         return sidang;
     }

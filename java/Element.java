@@ -21,9 +21,9 @@ public class Element {
     }
 
     public Student getMahasiswa() {
-        return mahasiswa;
+        return this.mahasiswa;
     }
     public Element getNext() {
-        return next;
+        return this.next;
     }
 }
